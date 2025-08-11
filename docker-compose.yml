@@ -1,0 +1,10 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    image: my-dev-companion
+    container_name: my-dev-companion-container
+    command: /bin/sh -c "sleep infinity"
+    volumes:
+      - ./src:/app
