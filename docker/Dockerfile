@@ -2,8 +2,12 @@ FROM python:3.13-slim
 
 WORKDIR /app
 
-COPY requirements.txt .
+# Installer les dépendances système si besoin
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    && rm -rf /var/lib/apt/lists/*
 
-RUN if [ -f requirements.txt ]; then pip install --no-cache-dir -r requirements.txt; fi
+# Copier uniquement les fichiers nécessaires à l’installation
+COPY pyproject.toml requirements.txt ./
+COPY src/ ./src/
 
-COPY ./src /app
+RUN pip install --no-cache-dir -e .
