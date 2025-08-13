@@ -1,0 +1,7 @@
+pyproject.toml
+src/my_dev_companion.egg-info/PKG-INFO
+src/my_dev_companion.egg-info/SOURCES.txt
+src/my_dev_companion.egg-info/dependency_links.txt
+src/my_dev_companion.egg-info/entry_points.txt
+src/my_dev_companion.egg-info/requires.txt
+src/my_dev_companion.egg-info/top_level.txt

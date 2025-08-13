@@ -1,9 +1,10 @@
 services:
   app:
     build:
-      context: .
+      context: ./
       dockerfile: ./docker/Dockerfile
     container_name: my-dev-companion-container
     volumes:
-      - .:/app
+      - ./app:/app
     working_dir: /app
+    tty: true
