@@ -1,2 +1,0 @@
-[console_scripts]
-my-dev-companion = src.main:app
