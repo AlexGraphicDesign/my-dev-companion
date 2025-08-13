@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[project]
+name = "my-dev-companion"
+version = "0.1.0"
+authors = [
+  { name="Alexandre Denys", email="alexandre.denys@orange.fr" },
+]
+description = "Un outil CLI pour le codage agentique."
+requires-python = ">=3.13"
+dependencies = [
+     "typer==0.16.0",
+]
+
+[project.scripts]
+# Quand on exécute 'my-dev-companion', elle doit appeler l'objet 'app'
+# qui se trouve dans le fichier 'main.py' du module 'src'.
+my-dev-companion = "src.main:app"
